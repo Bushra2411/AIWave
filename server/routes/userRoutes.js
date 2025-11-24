@@ -1,10 +1,10 @@
 import express from "express"
 import {auth} from "../middlewares/auth.js";
-import { getPublishedCreations,getAllCreations , toggleLikeCreation } from "../controllers/userController.js";
+import { getPublishedCreations,getAllCreations , getUserCreations,toggleLikeCreation } from "../controllers/userController.js";
 
 const userRouter=express.Router();
 
-//userRouter.get('/get-user-creations',auth,getUserCreations)
+userRouter.get('/get-user-creations',auth,getUserCreations)
 userRouter.get('/get-all-creations', auth, getAllCreations);
 
 userRouter.get('/get-published-creations',auth,getPublishedCreations)
